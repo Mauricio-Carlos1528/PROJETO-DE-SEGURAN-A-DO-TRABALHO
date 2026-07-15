@@ -1,0 +1,120 @@
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                    CHECK-IN DIÁRIO DE CONDIÇÕES                              ║
+║                          GUIA RÁPIDO DE USO                                  ║
+║                         WKVE Telecom                                         ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+📌 COMO USAR A APLICAÇÃO
+═══════════════════════════════════════════════════════════════════════════════
+
+1️⃣  ABRIR A APLICAÇÃO
+    • Navegue até a pasta do projeto
+    • Abra o arquivo: index.html
+    • Qualquer navegador moderno funciona (Chrome, Firefox, Safari, Edge)
+
+2️⃣  PREENCHER O FORMULÁRIO
+    • Digite seu NOME COMPLETO
+    • Use o controle deslizante para avaliar:
+      └─ Disposição Física (1=Muito cansado, 5=Excelente)
+      └─ Estado Mental (1=Muito estressado, 5=Focado/Tranquilo)
+    • Indique se sente DOR ou DESCONFORTO
+    • Confirme se está APTO para trabalhar
+    • Adicione OBSERVAÇÕES (opcional)
+    • Clique em "ENVIAR AVALIAÇÃO DIÁRIA"
+
+3️⃣  VISUALIZAR HISTÓRICO
+    • Clique na aba "Histórico de Testes"
+    • Use a busca para encontrar registros de um colaborador
+    • Veja todas as avaliações passadas em ordem cronológica
+
+4️⃣  NOTAS IMPORTANTES
+    ✓ Os dados são salvos LOCALMENTE no seu navegador
+    ✓ Não é necessário conectar-se à internet
+    ✓ Se limpar o cache/cookies, os dados podem ser deletados
+    ✓ Faça backup dos dados regularmente
+
+═══════════════════════════════════════════════════════════════════════════════
+
+📁 ESTRUTURA DE PASTAS
+═══════════════════════════════════════════════════════════════════════════════
+
+index.html          ← Arquivo PRINCIPAL (abra este!)
+README.md           ← Documentação completa
+ESTRUTURA.md        ← Guia detalhado das pastas
+docs.html           ← Documentação visual (HTML)
+package.json        ← Informações do projeto
+
+css/
+  └─ styles.css     ← Estilos customizados
+
+js/
+  ├─ config.js      ← Configurações
+  ├─ utils.js       ← Funções úteis
+  └─ script.js      ← Lógica principal
+
+db/
+  └─ database.js    ← Gerenciador de dados
+
+img/
+  └─ download.jpg   ← Logo WKVE Telecom
+
+═══════════════════════════════════════════════════════════════════════════════
+
+❓ DÚVIDAS FREQUENTES
+═══════════════════════════════════════════════════════════════════════════════
+
+P: Como faço para abrir a aplicação?
+R: Abra o arquivo "index.html" em seu navegador web (Chrome, Firefox, etc).
+
+P: Preciso de internet para usar?
+R: Não! A aplicação funciona 100% offline no seu navegador.
+
+P: Onde meus dados são salvos?
+R: No banco de dados local do navegador (IndexedDB), no seu próprio computador.
+
+P: E se eu limpar o cache do navegador?
+R: Os dados podem ser deletados. Recomendamos fazer backups regularmente.
+
+P: Posso usar em diferentes computadores?
+R: Não. Os dados estão salvos no navegador do computador onde você acessa.
+
+P: Como faço backup dos dados?
+R: Visite a aba de Histórico e copie os dados. (Futuro: função de export)
+
+P: A aplicação funciona em celular?
+R: Sim! Design responsivo - funciona em smartphones e tablets.
+
+P: Qual navegador usar?
+R: Chrome, Firefox, Safari ou Edge (versões recentes).
+
+═══════════════════════════════════════════════════════════════════════════════
+
+🔧 TECNOLOGIAS
+═══════════════════════════════════════════════════════════════════════════════
+
+✓ HTML5           - Estrutura
+✓ CSS3 + Tailwind - Design responsivo
+✓ JavaScript      - Interatividade
+✓ IndexedDB       - Banco de dados local
+✓ FontAwesome     - Ícones
+
+═══════════════════════════════════════════════════════════════════════════════
+
+📞 SUPORTE
+═══════════════════════════════════════════════════════════════════════════════
+
+Se a aplicação não funcionar:
+
+1. Tente recarregar a página (F5 ou Ctrl+R)
+2. Tente em outro navegador
+3. Verifique se JavaScript está habilitado
+4. Limpe o cache do navegador
+5. Entre em contato com o Departamento de TI
+
+═══════════════════════════════════════════════════════════════════════════════
+
+✨ Desenvolvido para: WKVE Telecom
+📅 Última atualização: 14/07/2026
+🔢 Versão: 1.0.0
+
+═══════════════════════════════════════════════════════════════════════════════

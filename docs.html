@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentação - Check-in Diário de Condições</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-slate-100 text-slate-800 font-sans">
+
+    <div class="max-w-5xl mx-auto px-4 py-12">
+        <!-- Cabeçalho -->
+        <header class="bg-gradient-to-r from-blue-600 to-blue-800 text-white rounded-lg shadow-lg p-8 mb-8">
+            <h1 class="text-4xl font-bold mb-2">📚 Documentação do Projeto</h1>
+            <p class="text-blue-100 text-lg">Check-in Diário de Condições - WKVE Telecom</p>
+        </header>
+
+        <!-- Índice -->
+        <nav class="bg-white rounded-lg shadow-md p-6 mb-8">
+            <h2 class="text-2xl font-bold mb-4 text-slate-900">📋 Índice</h2>
+            <ul class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                <li><a href="#estrutura" class="text-blue-600 hover:text-blue-800 flex items-center"><i class="fa-solid fa-folder mr-2"></i>Estrutura do Projeto</a></li>
+                <li><a href="#inicio" class="text-blue-600 hover:text-blue-800 flex items-center"><i class="fa-solid fa-rocket mr-2"></i>Como Começar</a></li>
+                <li><a href="#arquivos" class="text-blue-600 hover:text-blue-800 flex items-center"><i class="fa-solid fa-file mr-2"></i>Descrição dos Arquivos</a></li>
+                <li><a href="#banco-dados" class="text-blue-600 hover:text-blue-800 flex items-center"><i class="fa-solid fa-database mr-2"></i>Banco de Dados</a></li>
+                <li><a href="#tecnologias" class="text-blue-600 hover:text-blue-800 flex items-center"><i class="fa-solid fa-code mr-2"></i>Tecnologias</a></li>
+                <li><a href="#suporte" class="text-blue-600 hover:text-blue-800 flex items-center"><i class="fa-solid fa-headset mr-2"></i>Suporte</a></li>
+            </ul>
+        </nav>
+
+        <!-- Estrutura -->
+        <section id="estrutura" class="bg-white rounded-lg shadow-md p-6 mb-8">
+            <h2 class="text-2xl font-bold mb-4 text-slate-900"><i class="fa-solid fa-folder mr-2 text-blue-600"></i>Estrutura do Projeto</h2>
+            <div class="bg-slate-50 p-4 rounded border border-slate-200 font-mono text-sm overflow-x-auto">
+                <pre>PROJETO DE SEGURANÇA DO TRABALHO/
+├── 📄 index.html
+├── 📄 README.md
+├── 📄 ESTRUTURA.md
+├── 📄 package.json
+├── 📁 css/
+│   └── styles.css
+├── 📁 js/
+│   ├── config.js
+│   ├── utils.js
+│   └── script.js
+├── 📁 db/
+│   └── database.js
+├── 📁 img/
+│   └── download.jpg
+└── 📁 assets/</pre>
+            </div>
+        </section>
+
+        <!-- Como Começar -->
+        <section id="inicio" class="bg-white rounded-lg shadow-md p-6 mb-8">
+            <h2 class="text-2xl font-bold mb-4 text-slate-900"><i class="fa-solid fa-rocket mr-2 text-green-600"></i>Como Começar</h2>
+            
+            <div class="space-y-4">
+                <div class="bg-green-50 border-l-4 border-green-500 p-4 rounded">
+                    <h3 class="font-bold text-green-900 mb-2">Passo 1: Abrir a Aplicação</h3>
+                    <p class="text-green-800">Abra o arquivo <code class="bg-white px-2 py-1 rounded">index.html</code> em seu navegador web (Chrome, Firefox, Safari ou Edge)</p>
+                </div>
+
+                <div class="bg-blue-50 border-l-4 border-blue-500 p-4 rounded">
+                    <h3 class="font-bold text-blue-900 mb-2">Passo 2: Preencher o Formulário</h3>
+                    <ul class="text-blue-800 space-y-1">
+                        <li>✓ Digite seu nome completo</li>
+                        <li>✓ Avalie sua disposição física (1-5)</li>
+                        <li>✓ Avalie seu estado mental (1-5)</li>
+                        <li>✓ Indique presença de dor</li>
+                        <li>✓ Confirme aptidão para trabalhar</li>
+                        <li>✓ Adicione observações (opcional)</li>
+                    </ul>
+                </div>
+
+                <div class="bg-purple-50 border-l-4 border-purple-500 p-4 rounded">
+                    <h3 class="font-bold text-purple-900 mb-2">Passo 3: Enviar Avaliação</h3>
+                    <p class="text-purple-800">Clique no botão "Enviar Avaliação Diária" para salvar seus dados</p>
+                </div>
+
+                <div class="bg-orange-50 border-l-4 border-orange-500 p-4 rounded">
+                    <h3 class="font-bold text-orange-900 mb-2">Passo 4: Visualizar Histórico</h3>
+                    <p class="text-orange-800">Clique na aba "Histórico de Testes" para ver todos os registros e filtrar por colaborador</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Descrição dos Arquivos -->
+        <section id="arquivos" class="bg-white rounded-lg shadow-md p-6 mb-8">
+            <h2 class="text-2xl font-bold mb-4 text-slate-900"><i class="fa-solid fa-file mr-2 text-orange-600"></i>Descrição dos Arquivos</h2>
+            
+            <div class="space-y-4">
+                <div class="border-l-4 border-blue-500 pl-4 py-2">
+                    <h3 class="font-bold text-slate-900">index.html</h3>
+                    <p class="text-slate-600">Arquivo principal - Estrutura HTML da aplicação</p>
+                </div>
+
+                <div class="border-l-4 border-green-500 pl-4 py-2">
+                    <h3 class="font-bold text-slate-900">js/config.js</h3>
+                    <p class="text-slate-600">Configurações centralizadas (DB, mensagens, cores)</p>
+                </div>
+
+                <div class="border-l-4 border-purple-500 pl-4 py-2">
+                    <h3 class="font-bold text-slate-900">js/utils.js</h3>
+                    <p class="text-slate-600">Funções utilitárias reutilizáveis (formatação, validação, etc)</p>
+                </div>
+
+                <div class="border-l-4 border-red-500 pl-4 py-2">
+                    <h3 class="font-bold text-slate-900">js/script.js</h3>
+                    <p class="text-slate-600">Lógica principal da aplicação (formulário, abas, histórico)</p>
+                </div>
+
+                <div class="border-l-4 border-yellow-500 pl-4 py-2">
+                    <h3 class="font-bold text-slate-900">db/database.js</h3>
+                    <p class="text-slate-600">Gerenciamento do banco de dados IndexedDB</p>
+                </div>
+
+                <div class="border-l-4 border-indigo-500 pl-4 py-2">
+                    <h3 class="font-bold text-slate-900">css/styles.css</h3>
+                    <p class="text-slate-600">Estilos customizados que complementam Tailwind CSS</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Banco de Dados -->
+        <section id="banco-dados" class="bg-white rounded-lg shadow-md p-6 mb-8">
+            <h2 class="text-2xl font-bold mb-4 text-slate-900"><i class="fa-solid fa-database mr-2 text-cyan-600"></i>Banco de Dados</h2>
+            
+            <p class="text-slate-600 mb-4">A aplicação usa <strong>IndexedDB</strong> - um banco de dados local no navegador.</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="bg-gradient-to-br from-green-50 to-green-100 p-4 rounded border border-green-200">
+                    <h3 class="font-bold text-green-900 mb-2">✅ Vantagens</h3>
+                    <ul class="text-sm text-green-800 space-y-1">
+                        <li>• Funciona offline</li>
+                        <li>• Sem necessidade de servidor</li>
+                        <li>• Dados salvos localmente</li>
+                    </ul>
+                </div>
+
+                <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-4 rounded border border-blue-200">
+                    <h3 class="font-bold text-blue-900 mb-2">💾 Dados Armazenados</h3>
+                    <ul class="text-sm text-blue-800 space-y-1">
+                        <li>• Nome do colaborador</li>
+                        <li>• Data e hora</li>
+                        <li>• Avaliações (físico/mental)</li>
+                        <li>• Observações</li>
+                    </ul>
+                </div>
+
+                <div class="bg-gradient-to-br from-red-50 to-red-100 p-4 rounded border border-red-200">
+                    <h3 class="font-bold text-red-900 mb-2">⚠️ Importante</h3>
+                    <ul class="text-sm text-red-800 space-y-1">
+                        <li>• Limpar cache = perder dados</li>
+                        <li>• Faça backup regularmente</li>
+                        <li>• Use navegador confiável</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tecnologias -->
+        <section id="tecnologias" class="bg-white rounded-lg shadow-md p-6 mb-8">
+            <h2 class="text-2xl font-bold mb-4 text-slate-900"><i class="fa-solid fa-code mr-2 text-pink-600"></i>Tecnologias Utilizadas</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div class="bg-blue-50 p-4 rounded border border-blue-200 text-center">
+                    <i class="fa-brands fa-html5 text-3xl text-blue-600 mb-2 inline-block"></i>
+                    <h3 class="font-bold">HTML5</h3>
+                    <p class="text-sm text-slate-600">Estrutura</p>
+                </div>
+
+                <div class="bg-purple-50 p-4 rounded border border-purple-200 text-center">
+                    <i class="fa-brands fa-css3-alt text-3xl text-purple-600 mb-2 inline-block"></i>
+                    <h3 class="font-bold">CSS3 + Tailwind</h3>
+                    <p class="text-sm text-slate-600">Estilos</p>
+                </div>
+
+                <div class="bg-yellow-50 p-4 rounded border border-yellow-200 text-center">
+                    <i class="fa-brands fa-js text-3xl text-yellow-600 mb-2 inline-block"></i>
+                    <h3 class="font-bold">JavaScript</h3>
+                    <p class="text-sm text-slate-600">Lógica</p>
+                </div>
+
+                <div class="bg-green-50 p-4 rounded border border-green-200 text-center">
+                    <i class="fa-solid fa-database text-3xl text-green-600 mb-2 inline-block"></i>
+                    <h3 class="font-bold">IndexedDB</h3>
+                    <p class="text-sm text-slate-600">Dados</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Suporte -->
+        <section id="suporte" class="bg-gradient-to-r from-slate-900 to-slate-800 text-white rounded-lg shadow-md p-6 mb-8">
+            <h2 class="text-2xl font-bold mb-4"><i class="fa-solid fa-headset mr-2"></i>Suporte</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <h3 class="font-bold mb-2">💡 Dúvidas Comuns</h3>
+                    <p class="text-slate-300 mb-3">Se a aplicação não funciona:</p>
+                    <ul class="text-slate-300 space-y-2 text-sm">
+                        <li>✓ Tente em outro navegador</li>
+                        <li>✓ Limpe o cache do navegador</li>
+                        <li>✓ Verifique se JavaScript está habilitado</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="font-bold mb-2">📞 Entre em Contato</h3>
+                    <p class="text-slate-300 mb-3">Para suporte técnico:</p>
+                    <p class="text-slate-200 font-semibold">Departamento de TI - WKVE Telecom</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Rodapé -->
+        <footer class="text-center text-slate-600 py-8">
+            <p class="mb-2">Versão 1.0.0 | Desenvolvido para WKVE Telecom</p>
+            <p class="text-sm">Última atualização: 14 de julho de 2026</p>
+        </footer>
+    </div>
+
+</body>
+</html>

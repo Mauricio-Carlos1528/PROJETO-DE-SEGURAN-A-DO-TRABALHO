@@ -1,0 +1,190 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check-in Diário de Condições</title>
+    
+    <!-- Tailwind CSS para um design moderno e limpo -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FontAwesome para ícones amigáveis -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Estilos Customizados -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans min-h-screen">
+
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <!-- Cabeçalho -->
+        <header class="text-center mb-8">
+            <div class="inline-flex items-center justify-center mb-3">
+                <img src="img/download.jpg" alt="WKVE Telecom" class="h-24 object-contain">
+            </div>
+            <h1 class="text-3xl font-extrabold text-slate-900 tracking-tight">Check-in Diário de Condições</h1>
+            <p class="text-slate-500 mt-2">Avalie suas condições físicas e mentais antes de iniciar a jornada de trabalho.</p>
+        </header>
+
+        <!-- Abas de Navegação -->
+        <div class="flex border-b border-slate-200 mb-6 bg-white rounded-t-lg shadow-sm">
+            <button id="btn-tab-form" onclick="alternarAba('form')" class="flex-1 py-4 text-center font-medium border-b-2 border-blue-600 text-blue-600 transition duration-150">
+                <i class="fa-solid fa-pen-to-square mr-2"></i>Novo Questionário
+            </button>
+            <button id="btn-tab-hist" onclick="alternarAba('hist')" class="flex-1 py-4 text-center font-medium border-b-2 border-transparent text-slate-500 hover:text-slate-700 hover:border-slate-300 transition duration-150">
+                <i class="fa-solid fa-chart-line mr-2"></i>Histórico de Testes
+            </button>
+        </div>
+
+        <!-- Alerta de Feedback -->
+        <div id="feedback-alert" class="hidden mb-6 p-4 rounded-lg flex items-center shadow-sm"></div>
+
+        <!-- ABA 1: FORMULÁRIO -->
+        <section id="conteudo-form" class="bg-white rounded-lg shadow-sm border border-slate-100 p-6">
+            <form id="checkin-form" onsubmit="salvarFormulario(event)" class="space-y-6">
+                <!-- Identificação -->
+                <div>
+                    <label class="block text-sm font-semibold text-slate-700 mb-2" for="colaborador">Nome Completo do Colaborador</label>
+                    <input type="text" id="colaborador" required class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition" placeholder="Digite seu nome completo...">
+                </div>
+
+                <!-- Info de Data/Hora -->
+                <div class="bg-blue-50 border border-blue-100 text-blue-800 p-4 rounded-lg flex items-center">
+                    <i class="fa-regular fa-calendar-days text-xl mr-3"></i>
+                    <div>
+                        <span class="text-xs uppercase font-bold tracking-wider block opacity-75">Registro Temporal</span>
+                        <span id="data-hora-atual" class="font-semibold text-sm">Carregando...</span>
+                    </div>
+                </div>
+
+                <hr class="border-slate-100">
+
+                <!-- Campo: Disposição Física -->
+                <div>
+                    <div class="flex justify-between items-center mb-2">
+                        <label class="text-sm font-semibold text-slate-700">1. Como está sua disposição física e nível de energia?</label>
+                        <span id="valor-disposicao" class="text-xs font-bold px-2 py-1 bg-slate-100 rounded text-slate-600">3 - Regular</span>
+                    </div>
+                    <input type="range" id="disposicao" min="1" max="5" value="3" oninput="atualizarRangeText('disposicao')" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-blue-600">
+                    <div class="flex justify-between text-xs text-slate-400 mt-1">
+                        <span>Muito cansado (1)</span>
+                        <span>Excelente (5)</span>
+                    </div>
+                </div>
+
+                <!-- Campo: Estado Mental -->
+                <div>
+                    <div class="flex justify-between items-center mb-2">
+                        <label class="text-sm font-semibold text-slate-700">2. Como está seu nível de estresse e foco mental?</label>
+                        <span id="valor-mental" class="text-xs font-bold px-2 py-1 bg-slate-100 rounded text-slate-600">3 - Regular</span>
+                    </div>
+                    <input type="range" id="mental" min="1" max="5" value="3" oninput="atualizarRangeText('mental')" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-blue-600">
+                    <div class="flex justify-between text-xs text-slate-400 mt-1">
+                        <span>Muito estressado (1)</span>
+                        <span>Focado/Tranquilo (5)</span>
+                    </div>
+                </div>
+
+                <!-- Campo: Dor ou Desconforto -->
+                <div>
+                    <label class="block text-sm font-semibold text-slate-700 mb-3">3. Você sente alguma dor física ou indisposição no momento?</label>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+                        <label class="flex items-center p-3 border border-slate-200 rounded-lg cursor-pointer hover:bg-slate-50 transition">
+                            <input type="radio" name="dor" value="Não" checked class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-slate-300">
+                            <span class="ml-3 text-sm font-medium text-slate-700">Não</span>
+                        </label>
+                        <label class="flex items-center p-3 border border-slate-200 rounded-lg cursor-pointer hover:bg-slate-50 transition">
+                            <input type="radio" name="dor" value="Sim, leve" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-slate-300">
+                            <span class="ml-3 text-sm font-medium text-slate-700">Sim, leve</span>
+                        </label>
+                        <label class="flex items-center p-3 border border-slate-200 rounded-lg cursor-pointer hover:bg-slate-50 transition">
+                            <input type="radio" name="dor" value="Sim, moderada/forte" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-slate-300">
+                            <span class="ml-3 text-sm font-medium text-slate-700">Sim, moderada/forte</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Campo: Aptidão para o Trabalho -->
+                <div>
+                    <label class="block text-sm font-semibold text-slate-700 mb-3">4. Você se sente totalmente apto e seguro para trabalhar hoje?</label>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+                        <label class="flex items-center p-3 border border-slate-200 rounded-lg cursor-pointer hover:bg-slate-50 transition">
+                            <input type="radio" name="aptidao" value="Sim" checked class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-slate-300">
+                            <span class="ml-3 text-sm font-medium text-slate-700">Sim</span>
+                        </label>
+                        <label class="flex items-center p-3 border border-slate-200 rounded-lg cursor-pointer hover:bg-slate-50 transition">
+                            <input type="radio" name="aptidao" value="Sim, com ressalvas" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-slate-300">
+                            <span class="ml-3 text-sm font-medium text-slate-700">Com ressalvas</span>
+                        </label>
+                        <label class="flex items-center p-3 border border-slate-200 rounded-lg cursor-pointer hover:bg-slate-50 transition">
+                            <input type="radio" name="aptidao" value="Não me sinto apto" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-slate-300">
+                            <span class="ml-3 text-sm font-medium text-slate-700">Não me sinto apto</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Campo: Observações -->
+                <div>
+                    <label class="block text-sm font-semibold text-slate-700 mb-2" for="observacoes">Observações ou comentários adicionais (Opcional)</label>
+                    <textarea id="observacoes" rows="3" class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition" placeholder="Caso precise avisar sobre alguma indisposição física, cansaço excessivo..."></textarea>
+                </div>
+
+                <!-- Botão Enviar -->
+                <button type="submit" class="w-full py-4 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg transition-all shadow-md hover:shadow-lg flex items-center justify-center">
+                    <i class="fa-solid fa-paper-plane mr-2"></i> Enviar Avaliação Diária
+                </button>
+            </form>
+        </section>
+
+        <!-- ABA 2: HISTÓRICO -->
+        <section id="conteudo-hist" class="bg-white rounded-lg shadow-sm border border-slate-100 p-6 hidden">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6">
+                <h2 class="text-xl font-bold text-slate-900">Registros de Saúde e Segurança</h2>
+                
+                <!-- Input de Busca -->
+                <div class="relative w-full md:w-72">
+                    <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-slate-400">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </span>
+                    <input type="text" id="filtro-busca" oninput="renderizarHistorico()" class="w-full pl-10 pr-4 py-2 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm" placeholder="Buscar por colaborador...">
+                </div>
+            </div>
+
+            <!-- Tabela Responsiva -->
+            <div class="overflow-x-auto rounded-lg border border-slate-100">
+                <table class="w-full text-left text-sm">
+                    <thead class="bg-slate-50 text-slate-600 font-semibold uppercase text-xs border-b border-slate-100">
+                        <tr>
+                            <th class="px-6 py-4">Colaborador</th>
+                            <th class="px-6 py-4">Data e Hora</th>
+                            <th class="px-6 py-4 text-center">Físico</th>
+                            <th class="px-6 py-4 text-center">Mental</th>
+                            <th class="px-6 py-4">Dor/Desconforto</th>
+                            <th class="px-6 py-4">Apto?</th>
+                            <th class="px-6 py-4">Obs.</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabela-corpo" class="divide-y divide-slate-100">
+                        <!-- Gerado dinamicamente via JS -->
+                    </tbody>
+                </table>
+            </div>
+            
+            <div id="historico-vazio" class="hidden text-center py-12 text-slate-400">
+                <i class="fa-solid fa-folder-open text-4xl mb-3"></i>
+                <p>Nenhum registro encontrado.</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- Scripts - Banco de Dados -->
+    <script src="db/database.js"></script>
+    
+    <!-- Scripts - Aplicação Principal -->
+    <script src="javascript/script.js"></script>
+    
+    <!-- Scripts - Debug (remover em produção) -->
+    <script src="javascript/debug.js"></script>
+</body>
+</html>
