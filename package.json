@@ -5,14 +5,12 @@
   "author": "WKVE Telecom",
   "license": "MIT",
   "keywords": ["segurança", "saúde", "check-in", "colaboradores"],
-  "dependencies": {
-    "tailwindcss": "^3.x (via CDN)",
-    "fontawesome": "^6.4.0 (via CDN)"
-  },
+  "dependencies": {},
   "devDependencies": {},
   "scripts": {
     "serve": "Abrir index.html em um navegador",
-    "build": "Não requer build - uso de CDN"
+    "build": "echo 'No build needed - using CDN'",
+    "test": "echo 'No tests configured'"
   },
   "engines": {
     "browser": "Chrome 90+, Firefox 88+, Safari 14+, Edge 90+"
